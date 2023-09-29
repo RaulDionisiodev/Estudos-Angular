@@ -1,0 +1,44 @@
+<p ngClass={{estilo}}>comp-atributos works!</p>
+<button (click)="trocar()" >Change color</button>
+
+<ng-content select="h2"></ng-content>
+<!--O ngClass altera a classe do HTML dinamicamente de acordo com o valor de alguma propriedade-->
+
+<h1 [ngStyle]="{'background': corFundo, 'color': corDaFonte}" >Curso angular</h1>
+
+<!--com ngStyle eu consigo reescrever parte do nosso estilo fazendo bind com variáveis, o que pode tornar nossa folha 
+estilos dinâmica e inteligente.
+-->
+<h1>Lista de compras</h1>
+<p>Adicione um item</p>
+<input type="text" [(ngModel)]="item">
+<button (click)="adicionarLista()" >Adicionar item</button>
+<p>{{item}}</p>
+
+<ul>
+    <li *ngFor="let elemento of lista">
+        {{elemento}}
+    </li>
+</ul>
+
+<hr>
+<!--
+    O ngModel tem a cominicação HTML -> ts e ts -> html (bind bidirecional). Para isso se usa colchetes e parenteses [()]
+    para trabalhar com ele precisamos importar o FomrsModule do @angular/Forms no app.module
+-->
+
+<ng-template [ngIf]="isEnableBlock">
+    <a href="#">Finalizar compra</a>
+</ng-template>
+
+<hr>
+<!--
+    O ng-template é um molde que vai ser ativado de acordo com a sua necessidade.
+    Por padrão ele não é habilitado e pode ser ativado de acordo com alguma lógica
+-->
+<ng-content select="p"></ng-content>
+<!--
+    o ng-content permite que um componente pai passe um conteúdo para um componente filho e isso possa ser organizado
+    dinâmicamente.
+    Eu pego o elemento ou componente do pai e coloco no lugar que eu quiser no componente filho
+-->
