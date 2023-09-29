@@ -4,3 +4,16 @@
 
 <app-check-sample *ngIf="isAliveCheckSample"></app-check-sample>
 <button (click)="disposeCheckSample()" >Destruir</button>
+
+
+<app-card *ngIf="isAliveCard; else anotherBlock" ></app-card>
+
+<!--ngIf com data biding -> ele pega o valor da variável no arquivo app.component.ts 
+    e usa para exibir ou não o componente-->
+
+<ng-template #anotherBlock>
+    <p>Olá, sou um bloco secreto</p>
+</ng-template>
+
+<!--o ng-template é um bloco de código condicional. Ele pode ser associado a um apelido, no nosso caso é anotherBlock-->
+<!--Usamos um else na diretiva ngIf para exibir esse bloco de código quando o ngIF for falso-->

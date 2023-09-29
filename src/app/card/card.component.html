@@ -1,0 +1,58 @@
+<h1>My Card component</h1>
+<p *ngIf="false">card works!</p>
+
+<!--ngIf - condição booleana para exibir ou não uma página, componente ou uma parte dele-->
+
+<ul>
+    <li *ngFor="let p of produtos;let i = index" (click)="remover(i)">
+        {{i}} {{p}}
+    </li>
+    <button (click)="adicionar()" >Adicionar</button>
+</ul> 
+
+<!--o ngFor itera sobre uma lista e pode criar itens dinâmicamente. 
+    No nosso caso estamos exibindo cada item da lista
+    o ngFor já possui um index que podemos usar em eventos específicos
+    
+-->
+
+<!--
+    Um componente Angular 'reage' a mudanças em suas propriedades.
+    No nosso caso adicionamos novo produto ao array de produtos sempre que clicamos em adicionar
+    Mas não precisamos atualizar a página ou outra coisa para exibirmos os novos produtos: o componente reage a mudança
+    no array e já exibe na tela.
+-->
+
+<div [ngSwitch]="menuType">
+
+    <div *ngSwitchDefault >
+        <ul>
+            <li>Editar perfil</li>
+            <li>Adicionar cartão</li>
+        </ul>
+    </div>
+
+    <div *ngSwitchCase="'admin'" >
+        <ul>
+            <li>Editar perfil</li>
+            <li>Adicionar cartão</li>
+            <li>Gerênciar User</li>
+        </ul>
+    </div>
+    <div *ngSwitchCase="'superUser'" >
+        <ul>
+            <li>Editar perfil</li>
+            <li>Adicionar cartão</li>
+            <li>Gerênciar User</li>
+            <li>Gerenciar admins</li>
+        </ul>
+    </div>
+
+</div>
+
+<!--
+    o ngSwitch permite exibir itens de acordo com o valor de uma variável. No nosso caso a MenuType
+    O bloco marcado com ngSwitchDefault será exibido caso o valor da variáve não corresponda a nenhuma 
+    opção do ngSwitchCase
+-->
+

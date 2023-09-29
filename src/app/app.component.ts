@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'life-cicle';
   isAliveCheckSample : boolean = true;
+  isAliveCard : boolean = true;
 
   disposeCheckSample() : void {
       this.isAliveCheckSample = false
