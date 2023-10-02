@@ -17,11 +17,12 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     CompAtributosComponent
   ],
-  imports: [ // módulos do angular
+  imports: [ //Outros módulos do angular ou submódulos da aplicação
     BrowserModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [], // Tudo o que eu quero permitir que seja importado em outros módulos
+  providers: [], // services que, por exemplo, fazem contato com apis
+  bootstrap: [AppComponent]  // define quais são os componentes principais do módulo
 })
 export class AppModule { }
