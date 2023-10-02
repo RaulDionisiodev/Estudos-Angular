@@ -8,6 +8,7 @@ import { CheckSampleComponent } from './check-sample/check-sample.component';
 import { CardComponent } from './card/card.component';
 import { CompAtributosComponent } from './comp-atributos/comp-atributos.component';
 import { FormsModule } from '@angular/forms';
+import { ListaModule } from './lista/lista.module';
 
 @NgModule({
   declarations: [ // componentes, diretivas e pipes
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [ //Outros módulos do angular ou submódulos da aplicação
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ListaModule
   ],
   exports: [], // Tudo o que eu quero permitir que seja importado em outros módulos
   providers: [], // services que, por exemplo, fazem contato com apis
